@@ -102,3 +102,45 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
 # 绝对定位元素与非绝对定位元素的百分比计算的区别
 - 绝对定位元素的宽高百分比是相对于临近的position不为static的祖先元素的padding box来计算的。
 - 非绝对定位元素的宽高百分比则是相对于父元素的content box来计算的。
+
+# clear属性
+**概念：** 属性指定一个元素是否必须移动(清除浮动后)到在它之前的浮动元素下面。
+
+**作用元素：** 块级元素
+
+## clear:both 清除浮动原理
+```
+    .father::after{
+        content:'';
+        clear: both;
+        display: block;
+        height: 0;
+    }
+```
+父元素的伪元素设置clear:both清除左右浮动并占位，伪元素始终在浮动元素的下面，所以撑起了父元素的高度。
+
+# css样式重置
+## 通配符方式
+- 优点：写法简单
+- 缺点：
+    - 需要把所有的标签都遍历一遍，当网站较大时，
+样式比较多，这样写就大大的加强了网站运行的负载，会使网站加载的时候需要很长一段时间，因此一般大型的网站都有分层次的一
+套初始化样式。
+    - 而且重置样式并不是绝对的将margin、padding设置为0 
+
+# 包含块
+一个元素的尺寸和位置经常受其包含块(containing block)的影响。大多数情况下，包含块就是这个元素最近的祖先块元素的内容区，但也不是总是这样。
+
+一个盒子元素包括四个区域，从内到外依次为content、padding、border、margin
+
+包含块的查找规则：
+1. 如果 position 属性为 static 、 relative 或 sticky，包含块可能由它的最近的祖先块元素（比如说inline-block, block 或 list-item元素）的内容区的边缘组成，也可能会建立格式化上下文(比如说 a table container, flex container, grid container, 或者是 the block container 自身)。
+2. 如果 position 属性为 absolute ，包含块就是由它的最近的 position 的值不是 static （也就是值为fixed, absolute, relative 或 sticky）的祖先元素的内边距区的边缘组成。
+3. 如果 position 属性是 fixed，在连续媒体的情况下(continuous media)包含块是 viewport ,在分页媒体(paged media)下的情况下包含块是分页区域(page area)。
+4. 如果 position 属性是 absolute 或 fixed，包含块也可能是由满足以下条件的最近父级元素的内边距区的边缘组成的：
+    1. transform 或 perspective 的值不是 none
+    2. will-change 的值是 transform 或 perspective
+    3. filter 的值不是 none 或 will-change 的值是 filter(只在 Firefox 下生效).
+    4. contain 的值是 paint (例如: contain: paint;)
+
+width、height、padding、margin的百分比都是根据包含块来计算的
