@@ -144,3 +144,10 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     4. contain 的值是 paint (例如: contain: paint;)
 
 width、height、padding、margin的百分比都是根据包含块来计算的
+
+# chrome支持小于12px文字设置
+1. 设置-webkit-text-size-adjust：none，但是chrome27之后无法使用
+2. 使用scale缩放字体\
+
+# 请求静态资源的时候不携带cookie的方案
+静态资源提交到外域CDN上解决
