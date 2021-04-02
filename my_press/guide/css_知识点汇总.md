@@ -145,9 +145,40 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
 
 width、height、padding、margin的百分比都是根据包含块来计算的
 
+## 扩展问题：为什么height:100%会生效
+我们可以使用包含块来回答这个问题，示例代码：
+```
+<html>
+    <body>
+      <div></div>  
+    </body>
+</html>
+```
+我们想让div高度为整个窗口的高度，当我们给div设置height:100%的时候，通常不会生效，由第一条规则可知，包含块由内到外为body-html，所以只有当同时给body和html设置高度100%的时候才可以达成我们想要的效果。
+
 # chrome支持小于12px文字设置
 1. 设置-webkit-text-size-adjust：none，但是chrome27之后无法使用
 2. 使用scale缩放字体\
 
 # 请求静态资源的时候不携带cookie的方案
 静态资源提交到外域CDN上解决
+
+# inline-block相邻元素出现的元素间距
+**产生原因：** 因为代码在格式化的时候会出现回车，回车在编译过程中被编译成了空格所以相邻元素出现了空白
+**解决方案：**
+1. margin负值
+2. font-size:0
+3. 相邻元素在代码层面上不进行格式化，写在同一行
+
+# transition和animation的区别
+transition关注的是CSS property的变化，property值和时间的关系是一个三次贝塞尔曲线。
+
+animation作用于元素本身而不是样式属性，可以使用关键帧的概念，应该说可以实现更自由的动画效果。
+
+# margin：auto填充规则
+1. 一侧为定值，另一侧设置auto时会自动分配空间
+2. 两侧auto则评分剩余空间
+
+# margin无效场景
+1. 元素宽度定宽无法设置margin-right
+2. 元素绝对定位并确定定位方向top、right、bottom、left时，则设置它的同向margin无效。 如我设置right:10px向左定位时，则设置margin-left是无效的。
