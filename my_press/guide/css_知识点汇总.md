@@ -182,3 +182,34 @@ animation作用于元素本身而不是样式属性，可以使用关键帧的�
 # margin无效场景
 1. 元素宽度定宽无法设置margin-right
 2. 元素绝对定位并确定定位方向top、right、bottom、left时，则设置它的同向margin无效。 如我设置right:10px向左定位时，则设置margin-left是无效的。
+
+# vertical-align
+## 1. 概念
+用来指定且仅作用于行内（inline）元素和表格单元格（table-cell）元素的垂直对其方式
+
+## 2. 属性值
+
+属性值 | 含义
+---|---
+baseline | 与父元素基线对齐
+sub | 使元素基线与父元素下标基线对齐，作用效果等同于sub标签
+super | 使元素基线与父元素的上标基线对齐
+text-top | 使元素顶部与父元素字体顶部对齐
+text-bottom | 使元素底部与父元素字体底部对齐
+middle | 使元素的中部与父元素的基线加上父元素高度的一半对齐。
+<像素值> | 使元素的基线对齐到父元素的基线之上的给定长度
+
+## 3. 解释图片空白问题
+之前有提到过，空白问题是由于代码格式化后被编译成空格导致的空白，通过vetical-align的学习又可以增加一种新的解决方案，那就是通过修改vertical-align不为baseline解决，该方法的原理是通过修改垂直对齐的位置使元素不与父元素的基线对齐。该方法比font-size：0和取消代码格式化方案更好一些
+
+## tips
+**1. vertical-align的值为百分比时是按照line-height的值来计算的**
+```
+    <style>
+        .text{
+            line-height: 30px;
+            vertical-align: 10%; // 实际上值是3px
+        }
+    </style>
+```
+**2. vertical-align的默认值是baseline，即基线对齐，而基线的定义是字母x的下边缘。因此，内联元素默认都是沿着字**
