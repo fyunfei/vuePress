@@ -1,5 +1,5 @@
 ---
-title: JS知识点汇总
+title: JS继承
 category: js
 tag:
   - 继承
