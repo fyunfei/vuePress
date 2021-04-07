@@ -1,10 +1,8 @@
 ---
-title: 伪类和伪元素，傻傻分不清楚
-category: CSS
+title: JS数据存储结构
+category: js
 tag:
-  - css
-  - 伪类
-  - 伪元素
+  - 内存
 comment: false
 ---
 # 数据类型
