@@ -18,3 +18,16 @@ comment: false
 浏览器在某些特定情况下，在常规 JavaScript 语法基础上自己创建了一些外来值，这些就是“假值对象”。假值对象看起来和
 普通对象并无二致（都有属性，等等），但将它们强制类型转换为布尔值时结果为 false 最常见的例子是 document.all，它
 是一个类数组对象，包含了页面上的所有元素，由 DOM（而不是 JavaScript 引擎）提供给 JavaScript 程序使用。
+
+# hasOwnProperty
+方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性
+
+# 运算符
+~ 按位非
+>> 右移
+<< 左移
+
+# 如何判断当前脚本运行在浏览器还是 node 环境中？
+this === window ? 'browser' : 'node';
+
+通过判断 Global 对象是否为 window，如果不为 window，当前脚本没有运行在浏览器中。
