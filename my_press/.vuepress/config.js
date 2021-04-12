@@ -1,11 +1,10 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
-  title: "Theme Demo",
-  description: "A demo for vuepress-theme-hope",
+  title: "Enjoy Life",
+  description: "Where there is a will , there is a way!",
 
   dest: "./dist",
-
   head: [
     [
       "script",
@@ -33,22 +32,16 @@ module.exports = config({
   }, */
 
   themeConfig: {
-    baseLang: 'zh-CN',
+    baseLang: "zh-CN",
     logo: "/logo.svg",
+    themeColor: false,
+    darkmode: "disable",
     hostname: "https://vuepress-theme-hope-demo.mrhope.site",
 
     author: "叶子椰子",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+    repo: "https://github.com/fyunfei",
 
-    nav: [
-      { text: "博客主页", link: "/", icon: "home" },
-      { text: "项目主页", link: "/home/", icon: "home" },
-      {
-        text: "主题文档",
-        icon: "note",
-        link: "https://vuepress-theme-hope.github.io/zh/",
-      },
-    ],
+    nav: [{ text: "博客主页", link: "/", icon: "home" }],
 
     sidebar: {
       "/": ["", "home", "slides"],
@@ -59,7 +52,7 @@ module.exports = config({
       links: {
         Zhihu: "https://zhihu.com",
         Baidu: "https://baidu.com",
-        Github: "https://github.com",
+        Github: "https://github.com/fyunfei",
       },
     },
 
@@ -81,7 +74,7 @@ module.exports = config({
     },
 
     mdEnhance: {
-      enableAll: true,
+      enableAll: false,
       presentation: {
         plugins: [
           "highlight",
