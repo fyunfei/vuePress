@@ -1,8 +1,9 @@
 ---
-title: Symbol使用
+title: 符合Promise A+规范的promise
 category: js
 tag:
   - es6
+  - promise
 comment: false
 ---
 
